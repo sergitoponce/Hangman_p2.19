@@ -68,17 +68,15 @@ function preload(){
 }
 
 function setup() {
-    questionCount=0;
     createCanvas(1280, 640);
-
-
+    background(255);
+    questionCount=0;
 
 
     rulesText="A movie sutdio is scheduling the release of six films -- Fiesta, Glaciers, Hurricanes, Jets, Kangaroos, and Lovebird. No two of these films can be released on the same date. The release schedule is governed by the following conditions:";
     cond1="Fiesta must be released earlier than both Jets and Lovebird.";
     cond2="Kangaroos must be released earlier than Jets, and Jets must be released earlier than Hurricanes.";
     cond3= "Lovebird must be released earlier than Glaciers";
-    questionCount=0;
 
     //Question 1 Setup
     questionText1= "Which one of the following CANNOT be true?";
@@ -126,6 +124,11 @@ function setup() {
 }
 
 function draw() {
+    //hanger
+    fill(0);
+    line(300,100,300,800);
+    line(300,100,450,100);
+    line(450,100,450,200);
     switch (questionCount){
         case 0:
             questionText = questionText1;
@@ -146,7 +149,7 @@ function draw() {
             optionEText=optionEText2;
             break;
     }
-    background(255,255,255);
+
     //textSize(32);
     //textFont('Georgia');
     //text('Rules',100,0,100,100);
